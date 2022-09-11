@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk, messagebox
 from tkcalendar import DateEntry
-
+import db as db
 
 def atras(ventanaCerrar, ventanaAbrir):
     ventanaCerrar.destroy()
@@ -32,8 +32,8 @@ def validarDatos(txtNombre, txtApellido, txtFechaNaci, txtEmail):
     else:
         messagebox.showinfo(title="Validando",
                             message="Felicitaciones estas a un paso")
-        datos = [usuario, apellido, email, fechaNaci]
-        print(datos)
+        datos = (usuario, apellido, email, fechaNaci, "A")
+        db.registrar(datos)
 
 
 def comprar():
