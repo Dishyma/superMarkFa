@@ -33,7 +33,9 @@ def validarDatos(txtNombre, txtApellido, txtFechaNaci, txtEmail):
         messagebox.showinfo(title="Validando",
                             message="Felicitaciones estas a un paso")
         datos = (usuario, apellido, email, fechaNaci, "A")
-        db.registrar(datos)
+
+def usuariosRepetidos():
+    print()
 
 
 def comprar():

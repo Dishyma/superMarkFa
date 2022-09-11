@@ -18,3 +18,13 @@ def registrar(datosList):
     except:
         print("Ese correo ya esta en uso")
 
+def usuariosRepetidos(usuario):
+        formula2 = "SELECT userName FROM usernames"
+        cursor.execute(formula2)
+        for i in cursor:
+            print(type(i))
+            if usuario == i:
+                
+    
+
+usuariosRepetidos()
