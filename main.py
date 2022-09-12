@@ -34,8 +34,6 @@ def validarDatos(txtNombre, txtApellido, txtFechaNaci, txtEmail):
                             message="Felicitaciones estas a un paso")
         datos = (usuario, apellido, email, fechaNaci, "A")
 
-def usuariosRepetidos():
-    print()
 
 
 def comprar():
@@ -56,14 +54,29 @@ def elegirUsuario():
     ventana.geometry("852x480")
     ventanaElegir.title("Ingresando a la base")
 
+    lblUsername = Label(ventanaElegir, text="Nombre de usuario")
+    lblUsername.pack()
+
+    txtUsername = ttk.Entry(ventanaElegir, width=30)
+    txtUsername.pack()
     btn1 = Button(ventanaElegir,
+                  text='Validar',
+                  font="times 11",
+                  borderwidth=1,
+                  relief="raised",
+                  command=lambda: db.usuariosRepetidos(txtUsername.get())
+                  )
+    btn1.pack(pady=20)
+    
+
+    btn2 = Button(ventanaElegir,
                   text='Atras',
                   font="times 11",
                   borderwidth=1,
                   relief="raised",
                   command=lambda: atras(ventanaElegir, ventanaRegistrar)
                   )
-    btn1.pack(pady=20)
+    btn2.pack(pady=20)
 
 
 def login():
